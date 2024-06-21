@@ -1,0 +1,50 @@
+.services-container {
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .services {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .service-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .service-card h2 {
+    color: #333;
+  }
+  
+  .service-card h3 {
+    color: #00aaff;
+  }
+  
+  .service-card ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .service-card ul li {
+    text-align: left;
+    padding: 5px 0;
+  }
+  
+  .get-quote-btn {
+    background-color: #00aaff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .get-quote-btn:hover {
+    background-color: #0088cc;
+  }
