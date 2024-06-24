@@ -13,6 +13,8 @@ const App = () => {
         You deserve to surround yourself with clarity and cleanliness. Where there is order, there is Tranquility.
         </p>
         <button className="quote-button"  onClick={()=>Navigate("/QuoteForm")}>Get Quote</button>
+        <br />
+        <button className="quote-button"  onClick={()=>Navigate("/homes")}>Cleaning Products</button>
       </div>
       <div className="image">
         <img src={AnttImage} />

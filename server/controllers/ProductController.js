@@ -2,7 +2,7 @@ const ProductModel = require ('../models/productModels')
 
 
 exports.getproducts = async (req ,res ,next)=>{
-    const query = req.query.keyword?{ name : { 
+    const query = req.query.keyword?{ name :{ 
         $regex: req.query.keyword,
         $options: 'i'
      }}:{}

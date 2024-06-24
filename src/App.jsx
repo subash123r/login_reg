@@ -10,7 +10,7 @@ import Footer from './components/Footer.jsx';
 import { Navigate } from "react-router-dom";
 import Headers from './components/Headers.jsx';
 import ProductDetails from './pages/ProductDetails.jsx';
-
+import './StarRating.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart.jsx';
 
@@ -46,6 +46,7 @@ function App() {
      <Route path='/search'element={<Homes  />}>  </Route>
      <Route path='/product/:id'element={<ProductDetails cartItems={cartItems}  setCartItems={setCartItems}/>}>  </Route>
      <Route path='/cart'element={<Cart cartItems={cartItems}  setCartItems={setCartItems} />}>  </Route>
+    
    </Routes>
    </BrowserRouter>
   )

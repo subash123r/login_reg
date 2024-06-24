@@ -28,59 +28,51 @@ function Login(){
 
 
 return(
-    <div className="d-flex justify-content-center align-items-center bg-secondary vh-100">
-    <div className="bg-white p-3 rounded w-25">
-        <h2>Login</h2>
-       <form onSubmit= {handlesubmit}>  
-    
+   
+    <div className="d-flex justify-content-center align-items-center vh-100">
+    <form onSubmit={handlesubmit} className="p-4 border rounded shadow-sm">
+      <div className="mb-3">
+        <label htmlFor="exampleInputEmail1" className="form-label">
+          Email address
+        </label>
+        <input
+          type="email"
+          className="form-control"
+          id="exampleInputEmail1"
+          aria-describedby="emailHelp"
+          value={email}
+          onChange={(e) => setemail(e.target.value)}
+        />
+        <div id="emailHelp" className="form-text">
+          We'll never share your email with anyone else.
+        </div>
+      </div>
+      <div className="mb-3">
+        <label htmlFor="exampleInputPassword1" className="form-label">
+          Password
+        </label>
+        <input
+          type="password"
+          className="form-control"
+          id="exampleInputPassword1"
+          value={password}
+          onChange={(e) => setpassword(e.target.value)}
+        />
+      </div>
+      <div className="mb-3 form-check">
+        <input type="checkbox" className="form-check-input" id="exampleCheck1" />
+        <label className="form-check-label" htmlFor="exampleCheck1">
          
-        
-
-            <div/>
-            <div>
-                <div className="mb-3">
-                <label htmlFor="email">
-                    <strong>Email</strong>
-                </label>
-                <input type="email"
-                placeholder="Enter Email"
-                autoComplete="off"
-                name="email"
-                className="form-control rounded-0"
-                onChange={(e)=> setemail(e.target.value)}
-
-           
-                />
-                </div>
-            </div>
-            <div className="mb-3">
-                <label htmlFor="email">
-                    <strong>Password</strong>
-                </label>
-                <input type="Password"
-                placeholder="Enter Password"
-                name="password"
-                className="form-control rounded-0"
-                onChange={(e)=> setpassword(e.target.value)}
-
-                />
-            </div>
-            <button type="submit" className ="btn btn-sucess w-100 rounded-0 bg-blue" >
-                Login
-            </button>
-            </form> 
-
-            <p>Already Have An Account</p>
-          <Link to="/Login" className="btnbtn-default border w-100 bg-light rounded-0 text-decoration-none">
-            Sign up
-            </Link>
-             
-         
+        </label>
+      </div>
+     <Link to='/Home' type="submit" className="btn btn-primary">
+        LOGIN
+      
+      </Link>
+    </form>
+  </div>
        
-       <div/>
-       </div>
- </div>
-
+ 
 )
 }
 

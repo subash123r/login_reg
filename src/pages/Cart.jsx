@@ -3,6 +3,7 @@ import { Fragment , useState} from "react";
 import Footer from "../components/Footer";
 import Headers from "../components/Headers";
 import { Link } from "react-router-dom";
+import productImages from '../assets/images/download (1).jpg';
 
 function Cart({cartItems,setCartItems}){
     const [complete, setComplete] = useState(false);
@@ -69,7 +70,7 @@ function Cart({cartItems,setCartItems}){
                 <div className="cart-item">
                     <div className="row">
                         <div className="col-4 col-lg-3">
-                            <img src={"/templates/images/images (1).jpg"} alt={item.product.name} height="90" width="115" />
+                            <img src={productImages} alt={item.product.name} height="90" width="115" />
                         </div>
 
                         <div className="col-5 col-lg-3">

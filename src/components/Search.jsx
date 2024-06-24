@@ -16,20 +16,15 @@ function Search(){
 
  return(
     <div className="input-group">
-    <input
-      type="text"
-      id="search_field"
-      onChange={(e) => setKeyword(e.target.value)}
-      className="form-control"
-      onBlur={searchHandler}
-      placeholder="Enter Product Name ..."
-    />
-    <div className="input-group-append">
-    <button onClick={searchHandler} id="search_btn" className="btn">
-        <i className="fa fa-search" aria-hidden="true"></i>
-      </button>
-    </div>
-  </div>
+
+   
+   
+   <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"  onChange={(e) => setKeyword(e.target.value)} onBlur={searchHandler}/>
+
+<div><button className="btn btn-outline-success" type="submit" onClick={searchHandler}>Search</button></div>
+</div>
+
+
  )   
 }
 export default Search

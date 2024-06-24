@@ -4,7 +4,9 @@ import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Headers from "../components/Headers";
 import { toast} from "react-toastify";
-
+import productImages from '../assets/images/download (1).jpg';
+import '../StarRating.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function ProductDetails({cartItems,setCartItems}){
   
@@ -47,7 +49,7 @@ function ProductDetails({cartItems,setCartItems}){
               <div className="row f-flex justify-content-around">
              
                 <div className="col-12 col-lg-5 img-fluid" id="product_image">
-                  <img src={"/templates/images/images (1).jpg"} alt="Dell Inspiron" height="500" width="500" />
+                  <img src={productImages} alt="Dell Inspiron" height="500" width="500" />
                 </div>
         
                 <div className="col-12 col-lg-5 mt-5">
@@ -56,9 +58,10 @@ function ProductDetails({cartItems,setCartItems}){
         
                   <hr />
         
+                 
                   <div className="rating-outer">
-                    <div className="rating-inner"></div>
-                  </div>
+                            <div className="rating-inner" style={{width : `${product.ratings/5 * 100}%`}}></div>
+                        </div>
         
                   <hr />
         

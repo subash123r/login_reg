@@ -2,6 +2,7 @@ import React from "react";
 import Search from "./Search";
 import { Link } from "react-router-dom";
 import { Navigate } from "react-router-dom";
+import logoImage from '../assets/images/logo.png';
 import { useNavigate } from "react-router-dom";
 
 
@@ -16,7 +17,7 @@ function Headers({cartItems}){
         <div className="col-12 col-md-3">
          
           <div className="navbar-brand">
-            <Link to="/Homes"><img width="150px" src=".\templates\logo.png" /></Link>
+            <Link to="/Homes"><img width="150px" src={logoImage} /></Link>
             
           </div>
        

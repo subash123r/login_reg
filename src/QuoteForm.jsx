@@ -1,75 +1,88 @@
 import React, { useState } from 'react';
 import './QuoteForm.css';
 import { useNavigate } from 'react-router-dom';
+import  { Fragment,  } from 'react';
+import './GetQuoteForm.css'
+
+import { Link } from "react-router-dom";
+import axios, { Axios } from "axios";
+
 
 
 const QuoteForm = () => {
-  const Navigate = useNavigate()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    service: '',
-    time: '',
-    date: '',
-  });
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState("");
+  const [select, setSelect] = useState("");
+  const [time, setTime] = useState("");
+  const [date, setDate] = useState("");
+  const navigate = useNavigate();
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log(formData);
-    // Handle form submission, e.g., send the data to an API
-  };
- 
+      e.preventDefault();
+      if (!name || !email || !phone) {
+        setError("All fields are required");
+        return;
+      }
+      axios
+        .post("http://localhost:8000/form", { name, email, phone})
+        .then((result) => {
+          console.log(result);
+          navigate("/home");
+        })
+        .catch((err) => {
+          console.error(err);
+          setError("Failed to register. Please try again.");
+        });
+    };
 
-  return (
-  
-    <div className="form-container">
-      <form onSubmit={handleSubmit} className="quote-form">
+    return (
+        <form onSubmit={handleSubmit}>
+            <Fragment>
+            <div>
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" name="name"onChange={(e) => setName(e.target.value)}
+                 value={name} />
+            </div>
+            <div>
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" onChange={(e) => setEmail(e.target.value)}
+                 value={email}  />
+            </div>
+            <div>
+                <label htmlFor="phone">Phone</label>
+                <input type="tel" id="phone" name="phone" onChange={(e) => setPhone(e.target.value)}
+                 value={phone} />
+            </div>
+            <div>
+                  <label htmlFor="service">Select Service</label>
+                  <select id="service" name="service"onChange={(e) => setSelect(e.target.value)}
+                   value={select}>
+                      <option value="">Select</option>
+                      <option value="cleaning">Cleaning</option>
+                      <option value="gardening">Gardening</option>
+                      {/* Add more options as needed */}
+                  </select>
+              </div>
+              <div>
+                  <label htmlFor="time">Time</label>
+                  <input type="time" id="time" name="time"onChange={(e) => setTime(e.target.value)}
+                   value={time} />
+              </div>
+              <div>
+                  <label htmlFor="date">Date</label>
+                  <input type="date" id="date" name="date"onChange={(e) => setDime(e.target.value)}
+                   value={time} />
+              </div>
+            <button type="submit">Get Quote</button>
+            </Fragment>: 
+        </form>
+      
+    );
+}
 
-        <h2>Please fill the form below for your free quote!
-
-</h2>
-        <div className="form-group">
-          <label htmlFor="name">Name</label>
-          <input type="text" name="name" id="name" value={formData.name} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input type="email" name="email" id="email" value={formData.email} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="phone">Phone</label>
-          <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="service">Select Service</label>
-          <select name="service" id="service" value={formData.service} onChange={handleChange} required>
-            <option value="">Select</option>
-            <option value="cleaning">Cleaning</option>
-            <option value="gardening">Gardening</option>
-            {/* Add more options as needed */}
-          </select>
-        </div>
-        <div className="form-group">
-          <label htmlFor="time">Time</label>
-          <input type="time" name="time" id="time" value={formData.time} onChange={handleChange} required />
-        </div>
-        <div className="form-group">
-          <label htmlFor="date">Date</label>
-          <input type="date" name="date" id="date" value={formData.date} onChange={handleChange} required />
-        </div>
-        <button type="submit" className="submit-button"onClick={()=>Navigate("/home")} >Get Quote</button>
-      </form>
-    </div>
-  );
-};
 
 export default QuoteForm;
