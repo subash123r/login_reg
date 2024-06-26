@@ -25,7 +25,7 @@ function  GetQuoteForm(){
           return;
         }
         axios
-          .post("http://localhost:8000/form", { name, email, phone})
+          .post("mongodb+srv://log_reg:<password>@cluster0.rgdn8rh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0", { name, email, phone})
           .then((result) => {
             console.log(result);
             navigate("/");

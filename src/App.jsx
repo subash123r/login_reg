@@ -13,8 +13,8 @@ import ProductDetails from './pages/ProductDetails.jsx';
 import './StarRating.css';
 import 'react-toastify/dist/ReactToastify.css';
 import Cart from './pages/Cart.jsx';
-
-
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -32,8 +32,10 @@ function App() {
 
   return (
    <BrowserRouter>
-   
+   <div>
+   <ToastContainer theme='dark'/>
    <Routes>
+
   
    <Route path='/' element={<Signup  />}>  </Route>
    <Route path='/Login' element={<Login  />}>  </Route>
@@ -46,8 +48,9 @@ function App() {
      <Route path='/search'element={<Homes  />}>  </Route>
      <Route path='/product/:id'element={<ProductDetails cartItems={cartItems}  setCartItems={setCartItems}/>}>  </Route>
      <Route path='/cart'element={<Cart cartItems={cartItems}  setCartItems={setCartItems} />}>  </Route>
-    
+     
    </Routes>
+   </div>
    </BrowserRouter>
   )
 }

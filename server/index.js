@@ -1,11 +1,11 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
-const EmployeeMode1 = require('./models/employee')
+const EmployeeMode1 = require('./models/employee.js')
 const dotenv = require ('dotenv')
 const path = require('path')
 dotenv.config({path: path.join(__dirname,'config.env' , 'config.env')})
-const formModel1 = require('./models/Form')
+const formModel1 = require('./models/Form.js')
 
 
 
@@ -19,9 +19,10 @@ app.use(cors())
 
 
 
-const Products = require('./Product');
-const order = require('./order');
-const form = require("./models/Form")
+const Products = require('./Product.js');
+const order = require('./order.js');
+const form = require("./models/Form.js")
+
 
 app.use(express.json())
 app.use('/api/v1/',order);
@@ -29,15 +30,11 @@ app.use('/api/v1/',Products);
 
 
 
-mongoose.connect("mongodb://127.0.0.1:27017/employee");
+mongoose.connect("mongodb+srv://log_reg:Sabisubash123@cluster0.rgdn8rh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 
 
 
 
-app.post('open',(req,res)=>{
-    const {Name, Email}= req.body;
-    console.log(Name + "" +Email)
-})
 
 
 
@@ -69,6 +66,7 @@ app.post('/form', (req, res)=>{
     .then(employee => res.json(employee))
     .catch(err => res.json(err))
 })
+
 
 
 app.listen(8000,()=>{

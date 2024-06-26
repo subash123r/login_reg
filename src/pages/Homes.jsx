@@ -12,7 +12,7 @@ function Homes(){
 
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/v1/products?'+ searchParams)
+        fetch('http://localhost:8000/api/v1/products?' +searchParams )
         .then(res => res.json())
         .then( res => setProducts(res.products))
     },[searchParams])

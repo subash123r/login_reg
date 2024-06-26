@@ -62,3 +62,18 @@
   .submit-button:hover {
     background-color: #0056b3;
   }
+  .links{
+    width: 100%;
+    margin-left: 20px;
+    padding: 10px;
+    font-size: 1.1rem;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  .links:hover {
+    background-color: #0056b3;
+  }

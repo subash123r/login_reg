@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { toast } from "react-toastify";
 function Signup() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -19,7 +20,8 @@ function Signup() {
       .post("http://localhost:8000/register", { name, email, password })
       .then((result) => {
         console.log(result);
-        navigate("/login");
+        navigate("/login")
+        toast("Register Succes");
       })
       .catch((err) => {
         console.error(err);

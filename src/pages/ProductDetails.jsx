@@ -3,10 +3,10 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import Footer from "../components/Footer";
 import Headers from "../components/Headers";
-import { toast} from "react-toastify";
 import productImages from '../assets/images/download (1).jpg';
 import '../StarRating.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { toast } from "react-toastify";
 
 function ProductDetails({cartItems,setCartItems}){
   

@@ -78,6 +78,7 @@ const QuoteForm = () => {
                    value={time} />
               </div>
             <button type="submit">Get Quote</button>
+            <Link to="/home" className='links'>Back To Home </Link>
             </Fragment>: 
         </form>
       
