@@ -17,7 +17,7 @@ function Signup() {
       return;
     }
     axios
-      .post("http://localhost:8000/register", { name, email, password })
+      .post("https://login-reg-8.onrender.com/register", { name, email, password })
       .then((result) => {
         console.log(result);
         navigate("/login")

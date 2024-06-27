@@ -28,7 +28,7 @@ const QuoteForm = () => {
         return;
       }
       axios
-        .post("http://localhost:8000/form", { name, email, phone})
+        .post("https://login-reg-8.onrender.com/form", { name, email, phone})
         .then((result) => {
           console.log(result);
           navigate("/home");

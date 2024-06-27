@@ -19,7 +19,7 @@ function Login(){
           setError("All fields are required");
           return;
         }
-        axios.post('http://localhost:8000/login',{ email, password, })
+        axios.post('https://login-reg-8.onrender.com/login',{ email, password, })
         .then(result =>{
             console.log(result)
             if(result.data === "success"){

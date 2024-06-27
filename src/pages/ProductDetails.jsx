@@ -15,7 +15,7 @@ function ProductDetails({cartItems,setCartItems}){
     const {id} = useParams();
 
     useEffect(() => {
-        fetch('http://localhost:8000/api/v1/'+ '/product/'+id)
+        fetch('https://login-reg-8.onrender.com/api/v1/'+ '/product/'+id)
         .then(res => res.json())
         .then( res => setProduct(res.product))
     },[])

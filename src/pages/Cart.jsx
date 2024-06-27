@@ -42,7 +42,7 @@ function Cart({cartItems,setCartItems}){
         setCartItems(updatedItems)
     }
     function placeOrderHandler() {
-        fetch("http://localhost:8000/api/v1/order", {
+        fetch("https://login-reg-8.onrender.com/api/v1/order", {
             method: 'POST',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify(cartItems)
