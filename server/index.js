@@ -1,7 +1,7 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
-const EmployeeMode1 = require('./models/employee')
+const EmployeeMode1 = require('./models/Employee')
 const path = require('path')
 const formModel1 = require('./models/Form')
 
