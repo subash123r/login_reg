@@ -1,11 +1,9 @@
 const express = require("express")
 const mongoose = require('mongoose')
 const cors = require("cors")
-const EmployeeMode1 = require('./models/employee.js')
-const dotenv = require ('dotenv')
+const EmployeeMode1 = require('./models/employee')
 const path = require('path')
-dotenv.config({path: path.join(__dirname,'config.env' , 'config.env')})
-const formModel1 = require('./models/Form.js')
+const formModel1 = require('./models/Form')
 
 
 
@@ -19,9 +17,9 @@ app.use(cors())
 
 
 
-const Products = require('./Product.js');
-const order = require('./order.js');
-const form = require("./models/Form.js")
+const Products = require('./Product');
+const order = require('./order');
+const form = require("./models/Form")
 
 
 app.use(express.json())
