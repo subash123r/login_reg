@@ -17,8 +17,8 @@ app.use(cors())
 
 
 
-const Products = require('./Product');
-const order = require('./order');
+const Products = require('./models/Product');
+const order = require('./models/order');
 const form = require("./models/Form")
 
 
